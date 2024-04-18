@@ -1,0 +1,28 @@
+import pygame
+import sys
+
+# Inicializar Pygame
+pygame.init()
+
+# Definir dimensiones de la ventana
+width = 800
+height = 600
+
+# Cargar la imagen del fondo
+background_image = pygame.image.load("fondo.jpg")
+
+# Crear la ventana
+window = pygame.display.set_mode((width, height))
+
+# Escalar la imagen de fondo para que se ajuste a las dimensiones de la ventana
+background_image = pygame.transform.scale(background_image, (width, height))
+
+# Loop principal
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    window.blit(background_image, (0, 0))  # Dibujar la imagen de fondo en la posición (0, 0)
+    pygame.display.update()  # Actualizar la pantalla
